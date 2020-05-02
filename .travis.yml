@@ -7,7 +7,7 @@ before_install:
   - docker build antimofeev/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run antimofeev/react-test npm run test -- --coverage
+  - docker run -t antimofeev/react-test npm run test -- --coverage
 
 after_success:
   - docker build -t antimofeev/multi-client ./client
